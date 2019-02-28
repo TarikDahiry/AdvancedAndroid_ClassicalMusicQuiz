@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView highScoreTextView = (TextView) findViewById(R.id.highscoreText);
+        TextView highScoreTextView = findViewById(R.id.highscoreText);
 
         // Get the high and max score.
         int highScore = QuizUtils.getHighScore(this);
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         // If the game is over, show the game finished UI.
         if(getIntent().hasExtra(GAME_FINISHED)){
-            TextView gameFinishedTextView = (TextView) findViewById(R.id.gameResult);
-            TextView yourScoreTextView = (TextView) findViewById(R.id.resultScore);
+            TextView gameFinishedTextView = findViewById(R.id.gameResult);
+            TextView yourScoreTextView = findViewById(R.id.resultScore);
 
             Integer yourScore = QuizUtils.getCurrentScore(this);
             String yourScoreText = getString(R.string.score_result, yourScore, maxScore);

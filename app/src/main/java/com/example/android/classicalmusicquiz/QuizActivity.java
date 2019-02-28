@@ -47,7 +47,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        ImageView composerView = (ImageView) findViewById(R.id.composerView);
+        ImageView composerView = findViewById(R.id.composerView);
 
         boolean isNewGame = !getIntent().hasExtra(REMAINING_SONGS_KEY);
 
@@ -92,7 +92,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private Button[] initializeButtons(ArrayList<Integer> answerSampleIDs) {
         Button[] buttons = new Button[mButtonIDs.length];
         for (int i = 0; i < answerSampleIDs.size(); i++) {
-            Button currentButton = (Button) findViewById(mButtonIDs[i]);
+            Button currentButton = findViewById(mButtonIDs[i]);
             Sample currentSample = Sample.getSampleByID(this, answerSampleIDs.get(i));
             buttons[i] = currentButton;
             currentButton.setOnClickListener(this);
