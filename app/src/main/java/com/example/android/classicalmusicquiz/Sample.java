@@ -62,7 +62,8 @@ class Sample {
      * @param sampleID The sample ID.
      * @return The portrait Bitmap.
      */
-    static Bitmap getComposerArtBySampleID(Context context, int sampleID){
+    static Bitmap getComposerArtBySampleID(Context context, int sampleID) {
+
         Sample sample = Sample.getSampleByID(context, sampleID);
         int albumArtID = context.getResources().getIdentifier(
                 sample != null ? sample.getAlbumArtID() : null, "drawable",
@@ -167,6 +168,7 @@ class Sample {
      * @throws IOException Exception thrown if the sample file can't be found.
      */
     private static JsonReader readJSONFile(Context context) throws IOException {
+
         AssetManager assetManager = context.getAssets();
         String uri = null;
 
