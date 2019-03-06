@@ -180,7 +180,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showNotification(PlaybackStateCompat state) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, null);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "channelId");
 
         int icon;
         String play_pause;
@@ -370,7 +370,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                     mExoPlayer.getCurrentPosition(), 1f);
         }
         mMediaSession.setPlaybackState(mStateBuilder.build());
-        //showNotification(mStateBuilder.build());
+        showNotification(mStateBuilder.build());
     }
 
     @Override
